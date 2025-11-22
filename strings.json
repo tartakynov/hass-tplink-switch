@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TP-Link Network Switch Monitor",
+        "description": "Enter the network switch credentials",
+        "data": {
+          "ip": "IP Address",
+          "username": "Username",
+          "password": "Password"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "[%key:common::config_flow::abort::already_configured_service%]"
+    },
+    "error": {
+      "auth_error": "Cannot authenticate. Invalid credentials"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "port": {
+        "name": "Port {N}"
+      }
+    }
+  }
+}

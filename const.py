@@ -1,0 +1,5 @@
+DOMAIN = "tplinkmonitor"
+CONF_IP = "ip"
+CONF_USERNAME = "username"
+CONF_PASSWORD = "password"
+COORDINATOR_NAME = "TP-Link Network Switch Monitor"

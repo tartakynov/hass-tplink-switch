@@ -1,0 +1,14 @@
+{
+  "domain": "tplinkmonitor",
+  "name": "TP-Link Network Switch Monitor",
+  "version": "0.1.0",
+  "codeowners": [
+    "@tartakynov"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/tartakynov/tplinkmonitor",
+  "iot_class": "local_polling",
+  "requirements": [
+    "requests==2.32.5"
+  ]
+}
