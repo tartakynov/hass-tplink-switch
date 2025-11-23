@@ -4,3 +4,4 @@ venv
 .DS_Store
 *.pyd
 run.sh
+prompt.md

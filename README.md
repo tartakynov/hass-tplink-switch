@@ -31,7 +31,7 @@ To configure this custom integration, follow these steps:
 
 Upon successful authentication, 16 new entities will be added to your Home Assistant:
 
-- `sensor.#{entity ID}_port{N}`: Can have one of the following states - LINKDOWN, 10MH, 10MF, 100MH, 100MF, 1000MH, 1000MF
+- `sensor.#{entity ID}_port{N}`: Can have one of the following states - LINKDOWN, 10MH, 10MF, 100MH, 100MF, 1000MF
 
 ## Tracking Frequency
 
