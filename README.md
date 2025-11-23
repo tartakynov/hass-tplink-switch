@@ -3,18 +3,13 @@
 This Home Assistant integration allows you to monitor the port link statuses from TL-SG1016PE network switch.
 
 > [!CAUTION]
-> Please be aware that Home Assistant exposes the configuration values of all integrations to every other installed
-> integration. This means that if there is a malicious integration installed that sends back all configuration values
-> from
-> your Home Assistant, your network switch credentials could potentially be leaked. Use this integration at your own risk.
+> This integration stores your network switch credentials in Home Assistant. Be aware that other malicious integrations could potentially access and steal these credentials.
 
 ## Installation
 
 To manually install this integration from GitHub, follow these instructions:
 
-- Add `tplinkmonitor` folder with the contents of this repository into the `custom_components` directory of your Home
-  Assistant installation. If the `custom_components` directory does not exist, create it at the same level as
-  your `configuration.yaml` file.
+- Clone this repository into the `custom_components` folder of your Home Assistant installation, so you have `custom_components/hass-tplink-switch` with the contents of this repository. If the `custom_components` directory does not exist, create it at the same level as your `configuration.yaml` file.
 - Restart Home Assistant to apply the changes.
 - After restarting, configure the integration through the Home Assistant UI.
 
@@ -31,7 +26,7 @@ To configure this custom integration, follow these steps:
 
 Upon successful authentication, 16 new entities will be added to your Home Assistant:
 
-- `sensor.#{entity ID}_port{N}`: Can have one of the following states - LINKDOWN, 10MH, 10MF, 100MH, 100MF, 1000MF
+- `sensor.#{entity ID}_port{N}`: Can have one of the following states - LINKDOWN, 10MH, 10MF, 100MH, 100MF, 1000MF, UNKNOWN
 
 ## Tracking Frequency
 
