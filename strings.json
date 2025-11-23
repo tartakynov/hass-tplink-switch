@@ -22,7 +22,17 @@
   "entity": {
     "sensor": {
       "port": {
-        "name": "Port {N}"
+        "name": "Port {N}",
+        "state": {
+          "linkdown": "Link Down",
+          "10mh": "10M Half",
+          "10mf": "10M Full",
+          "100mh": "100M Half",
+          "100mf": "100M Full",
+          "1000mh": "1000M Half",
+          "1000mf": "1000M Full",
+          "unknown": "Unknown"
+        }
       }
     }
   }

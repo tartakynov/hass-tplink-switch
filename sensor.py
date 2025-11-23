@@ -21,6 +21,9 @@ LINK_STATUS_MAP = {
     6: "1000mf"
 }
 
+# Valid options including unknown
+LINK_STATUS_OPTIONS = list(LINK_STATUS_MAP.values()) + ["unknown"]
+
 
 async def async_setup_entry(
     hass: HomeAssistant,
@@ -70,7 +73,7 @@ class TPLinkSwitchPortSensor(CoordinatorEntity, SensorEntity):
             name=f"Port {port_number}",
             icon="mdi:ethernet",
             device_class=SensorDeviceClass.ENUM,
-            options=list(LINK_STATUS_MAP.values()),
+            options=LINK_STATUS_OPTIONS,
             translation_key="port",
         )
 
@@ -87,7 +90,7 @@ class TPLinkSwitchPortSensor(CoordinatorEntity, SensorEntity):
             return None
 
         status_value = self.coordinator.data[port_index]
-        return LINK_STATUS_MAP.get(status_value, f"UNKNOWN_{status_value}")
+        return LINK_STATUS_MAP.get(status_value, "unknown")
 
     @property
     def available(self) -> bool:
