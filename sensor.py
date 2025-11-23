@@ -1,18 +1,16 @@
 from typing import Optional
 
-from homeassistant.components.sensor import SensorEntity
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from homeassistant.helpers.device_registry import DeviceInfo
-
 from homeassistant.components.sensor import (
     SensorDeviceClass, SensorEntityDescription, SensorEntity,
 )
+from homeassistant.config_entries import ConfigEntry
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers.device_registry import DeviceInfo
+from homeassistant.helpers.entity_platform import AddEntitiesCallback
+from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from .coordinator import TPLinkSwitchCoordinator
 from .const import DOMAIN, CONF_IP
+from .coordinator import TPLinkSwitchCoordinator
 
 LINK_STATUS_MAP = {
     0: "linkdown",

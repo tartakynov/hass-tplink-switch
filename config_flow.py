@@ -1,11 +1,11 @@
-import logging
 import hashlib
+import logging
 
 import voluptuous as vol
 from homeassistant.config_entries import ConfigFlow
 
-from .tlstats import TLStats
 from .const import DOMAIN, CONF_IP, CONF_USERNAME, CONF_PASSWORD
+from .tlstats import TLStats
 
 _LOGGER = logging.getLogger(__name__)
 

@@ -4,11 +4,12 @@ Handles authentication and fetching port statistics via HTTP
 """
 
 import asyncio
-import requests
-import re
 import logging
+import re
 from typing import Optional, List
 from urllib.parse import urljoin
+
+import requests
 
 logger = logging.getLogger(__name__)
 
@@ -219,4 +220,3 @@ class TLStats:
         """
         self.session.close()
         self._authenticated = False
-

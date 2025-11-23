@@ -14,7 +14,9 @@
 
 import logging
 from getpass import getpass
+
 from tlstats import TLStats
+
 
 def status_to_text(status):
     statuses = {
@@ -26,6 +28,7 @@ def status_to_text(status):
         6: "1000MF"
     }
     return statuses.get(status, "UNKNOWN")
+
 
 # Example usage and testing
 if __name__ == "__main__":
@@ -49,7 +52,7 @@ if __name__ == "__main__":
 
             # Display individual port link statuses
             for i, status in enumerate(statuses):
-                print(f"Port {i+1}: {status_to_text(status)}")
+                print(f"Port {i + 1}: {status_to_text(status)}")
         else:
             print("Failed to retrieve port statuses")
 

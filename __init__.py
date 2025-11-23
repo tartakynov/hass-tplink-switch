@@ -4,9 +4,9 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 
-from .tlstats import TLStats
 from .const import CONF_IP, CONF_USERNAME, CONF_PASSWORD, DOMAIN
 from .coordinator import TPLinkSwitchCoordinator
+from .tlstats import TLStats
 
 _LOGGER = logging.getLogger(__name__)
 
