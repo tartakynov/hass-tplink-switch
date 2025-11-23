@@ -171,26 +171,19 @@ class TLStats:
     def get_port_statuses(self) -> Optional[List[int]]:
         """
         Get current port link statuses from the switch.
-        Handles authentication if needed.
+        Re-authenticates on every call to avoid session persistence issues.
 
         Returns:
             List of port link statuses (18 elements: 16 ethernet + 2 SFP) if successful, None otherwise
         """
-        # Authenticate if not already authenticated
-        if not self._authenticated:
-            if not self._authenticate():
-                logger.error("Failed to authenticate with switch")
-                return None
+        # Always re-authenticate on every call
+        self._authenticated = False
+        if not self._authenticate():
+            logger.error("Failed to authenticate with switch")
+            return None
 
         # Fetch port statistics
         statuses = self._fetch_port_statistics()
-
-        # If fetch failed, try re-authenticating once
-        if statuses is None and self._authenticated:
-            logger.info("Attempting to re-authenticate after failed fetch")
-            self._authenticated = False
-            if self._authenticate():
-                statuses = self._fetch_port_statistics()
 
         return statuses
 
