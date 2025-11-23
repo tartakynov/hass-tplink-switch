@@ -2,6 +2,9 @@
 
 This Home Assistant integration allows you to monitor the port link statuses from TL-SG1016PE network switch.
 
+> [!NOTE]
+> This is not an official integration and is not affiliated with or endorsed by TP-Link.
+
 > [!CAUTION]
 > This integration stores your network switch credentials in Home Assistant. Be aware that other malicious integrations could potentially access and steal these credentials.
 
@@ -30,4 +33,4 @@ Upon successful authentication, 16 new entities will be added to your Home Assis
 
 ## Tracking Frequency
 
-This integration queries the network switch for updated statistics every 5 minutes.
+This integration queries the network switch for updated statistics every 15 minutes.
