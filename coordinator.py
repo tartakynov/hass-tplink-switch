@@ -8,7 +8,7 @@ from .tlstats import TLStats
 
 _LOGGER = logging.getLogger(__name__)
 
-DEFAULT_UPDATE_INTERVAL = timedelta(minutes=5)
+DEFAULT_UPDATE_INTERVAL = timedelta(minutes=15)
 
 
 class TPLinkSwitchCoordinator(DataUpdateCoordinator):
